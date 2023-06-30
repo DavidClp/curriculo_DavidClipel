@@ -51,11 +51,28 @@ ScrollReveal().reveal('',{origin: 'right'})
 
 /* ------------- typed  -------------- */
 const typed = new Typed('.multiple-text',{
-    strings: ['Desenvolvedor Web', 'Desenvolvedor Front-end', 'Estudante Engenharia de software'],
+    strings: ['Desenvolvedor Web', 'Desenvolvedor Front-end', 'Estudante De Engenharia de software'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 })
+
+
+/* --------------- Carrosel ---------------- */
+const imgsCarrosel = document.querySelector('.carrosel')
+const img = document.querySelectorAll(".carrosel img")
+
+let idx = 0;
+
+function carrosel(){
+    idx++;
+    if(idx > img.length - 1){
+        idx = 0;
+    }
+    imgsCarrosel.style.transform = `translateX(${-idx * img[0].width}px)`;
+}
+
+setInterval(carrosel, 4000)
 
 
